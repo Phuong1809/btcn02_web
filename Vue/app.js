@@ -2,6 +2,9 @@ import pageHeader from './header.js'
 import pageHome from './home.js'
 import navPage from './nav.js'
 import search from './search.js'
+import pageFooter from './footer.js'
+
+
 
 export default {
     data() {
@@ -65,7 +68,7 @@ export default {
         }
     },
     components: {
-        pageHeader,pageHome,navPage,search
+        pageHeader,pageHome,navPage,search,pageFooter
     },
     template: 
     `
