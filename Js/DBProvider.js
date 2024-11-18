@@ -54,10 +54,12 @@ export default {
                     }
                     break;
                 case 'get':
-                    if (pattern == 'top-grossing') {
-                        url = `http://matuan.online:2422/api/Top50Movies`;
-                    } else {
-                        url += `/${pattern}`;
+                    if (pattern) {
+                        if (pattern === 'top-grossing') {
+                            url = `http://matuan.online:2422/api/Top50Movies`;
+                        } else {
+                            url += `/${pattern}`;
+                        }
                     }
                     break;
                 case 'detail':
