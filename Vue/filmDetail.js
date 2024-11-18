@@ -50,17 +50,17 @@ export default {
             </div>
             <div class="col-md-6">
                 <h1 :class="{'text-light': darkMode}" class="mb-3">{{ film.title }} ({{ film.year }})</h1>
-                <p><strong>Đạo diễn:</strong>
+                <p><strong>Đạo diễn: </strong>
                     <span v-for="(director, index) in film.directorList" :key="director.id">
                         {{ director.name }}<span v-if="index < film.directorList.length - 1">, </span>
                     </span>
                 </p>
-                <p><strong>Thể loại:</strong>
+                <p><strong>Thể loại: </strong>
                     <span v-for="(genre, index) in film.genreList" :key="genre.key">
                         {{ genre.value }}<span v-if="index < film.genreList.length - 1">, </span>
                     </span>
                 </p>
-                <p><strong>Tóm tắt:</strong> {{ film.plotFull }}</p>
+                <p><strong>Tóm tắt: </strong> {{ film.plotFull }}</p>
             </div>
         </div>
         <div class="row mb-4">
