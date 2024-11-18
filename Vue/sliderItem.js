@@ -1,3 +1,4 @@
+// Vue/sliderItem.js
 export default {
     props:["item"],
     emits:["showDetail"],

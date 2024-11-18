@@ -1,3 +1,4 @@
+// JS/DBProvider.js
 import axios from 'https://cdn.jsdelivr.net/npm/axios@1.4.0/dist/esm/axios.min.js';
 
 export default {
@@ -71,12 +72,19 @@ export default {
                 console.log(`Fetching URL: ${url} with params:`, params);
                 const response = await axios.default.get(url, { params });
                 const data = response.data;
-                const items = data.slice(startIndex, endIndex + 1);
+        
+                let items = [];
+                if (Array.isArray(data)) {
+                    items = data.slice(startIndex, endIndex + 1);
+                } else {
+                    items = [data];
+                }
+        
                 return {
                     [type]: className,
                     page: page,
                     per_page: perPage,
-                    total_page: Math.ceil(data.length / perPage),
+                    total_page: Math.ceil((Array.isArray(data) ? data.length : 1) / perPage),
                     items: items
                 };
             } catch (error) {

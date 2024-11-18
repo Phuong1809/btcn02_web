@@ -1,3 +1,4 @@
+// Js/slider.js
 import DBProvider from '../Js/DBProvider.js'
 import sliderItem from './sliderItem.js';
 
