@@ -1,0 +1,16 @@
+✓1 điểm: Giao diện có bản vẽ bộ cục và các thành phần yêu cầu (chưa có đủ liệu movie, phải điền đủ các thông tin yêu cầu).
+✓1 điểm: Thực hiện được thể độ Dark mode.
+✓1 điểm: Nhận thành module DB provider (hoặc DB utility) với method fetch đáp ứng yêu cầu, KHÔNG hoàn thành phần thi các phần sau KHÔNG tính điểm.
+✓1 điểm: Danh sách 5 phim có doanh thu cao nhất hiển thị (dữ liệu hướng chuyển movie dạng slide) với các thông tin cơ bản: poster, title, rated, length.
+✓1 điểm: Danh sách 15-30 phim phổ biến nhất hiển thị như yêu cầu (điều chuyển trang dạng slide).
+✓1 điểm: Hiệu ứng highlight khi hover Movie như yêu cầu (có thêm một số thông tin).
+✓1 điểm: Danh sách 15-30 phim có thứ hạng cao nhất hiển thị như yêu cầu.
+✓1 điểm: Liên kết để chuyển sang xem chi tiết Movie ở bất kỳ Movie nào trên bất kỳ danh sách nào.
+✓1 điểm: Thực hiện tìm kiếm Movie theo tên và hiển thị theo dạng CardView với các thông tin cơ bản: poster, title, rated, length,...
+✓1 điểm: Thực hiện tìm kiếm Movie theo Diễn viên
+✓1 điểm: Xem chi tiết Movie, có hiển thị được hình ảnh, tiêu đề, năm sản xuất, đạo diễn, tóm tắt, thông tin diễn viên, thể loại.
+✓1 điểm: Xem thông tin chi tiết diễn viên (nhấn liên kết từ tên diễn viên trong xem chi tiết Movie) có hiển thị được hình ảnh, tên diễn viên, tiểu sử. Cần hiển thị thêm được danh sách Movie diễn viên có tham gia (dạng danh sách có nhiều thông tin).
+✓1 điểm: Trong phần chi tiết Movie hiển thị được reviews cho Movie.
+✓1 điểm: thực hiện được chức năng về Home và có hiệu ứng Loading.
+✓1 điểm: có phần trang ở các danh sách: kết quả tìm kiếm, danh sách phim của diễn viên.
+Tổng 15/15đ
