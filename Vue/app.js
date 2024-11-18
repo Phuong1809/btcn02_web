@@ -5,6 +5,7 @@ import navPage from './nav.js'
 import search from './search.js'
 import pageFooter from './footer.js'
 import filmDetail from './filmDetail.js'
+import actorDetail from './actorDetail.js'
 
 export default {
     data() {
@@ -13,7 +14,8 @@ export default {
             searchValue: "",
             searchType: "title",
             darkMode: false,
-            targetFilm: null // Đã thêm targetFilm
+            targetFilm: null,
+            selectedActor: null // Added to store selected actor
         }
     },
     computed: {
@@ -36,6 +38,11 @@ export default {
                     darkMode: this.darkMode
                 }
             }
+            if (this.currentContent === "actor-detail") {
+                return {
+                    actor: this.selectedActor
+                }
+            }
         },
         getEvent() {
             if (this.currentContent === "page-home") {
@@ -50,7 +57,14 @@ export default {
                 }
             }
             if (this.currentContent === "film-detail") {
-                return {}
+                return {
+                    viewActor: this.viewActor
+                }
+            }
+            if (this.currentContent === "actor-detail") {
+                return {
+                    back: this.viewFilm
+                }
             }
         },
     },
@@ -85,6 +99,21 @@ export default {
             this.currentContent = 'film-detail';
         },
         /**
+         * Chuyển đổi nội dung hiện tại sang `actor-detail` với `selectedActor` cụ thể.
+         * @param {Object} actor - Đối tượng diễn viên được chọn.
+         */
+        viewActor(actor) {
+            this.selectedActor = actor;
+            this.currentContent = 'actor-detail';
+        },
+        /**
+         * Quay lại trang phim chi tiết và xóa `selectedActor`.
+         */
+        viewFilm() {
+            this.currentContent = 'film-detail';
+            this.selectedActor = null;
+        },
+        /**
          * Quay lại trang chủ và xóa `targetFilm`.
          */
         returnHome() {
@@ -98,7 +127,8 @@ export default {
         navPage,
         search,
         pageFooter,
-        filmDetail
+        filmDetail,
+        actorDetail 
     },
     template:
         `

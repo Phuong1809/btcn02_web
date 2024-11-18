@@ -17,9 +17,6 @@ export default {
         }
     },
     methods: {
-        /**
-         * Lấy dữ liệu chi tiết phim từ API.
-         */
         async getData() {
             try {
                 const query = `detail/Movies/${this.targetFilm}`;
@@ -35,6 +32,10 @@ export default {
                 this.hasData = false;
                 this.errorMessage = 'Không tìm thấy dữ liệu phim.'; // Thông báo lỗi cho người dùng
             }
+        },
+        viewActorDetails(actor) {
+            console.log('Emitting view-actor event for:', actor); // Debug log
+            this.$emit('view-actor', actor);
         }
     },
     mounted() {
@@ -67,12 +68,11 @@ export default {
                 <h3 :class="{'text-light': darkMode}" class="mb-3">Diễn viên</h3>
                 <div class="row">
                     <div class="col-md-3 mb-3" v-for="actor in film.actorList" :key="actor.id">
-                        <div class="card h-100">
+                        <div class="card h-100" @click="viewActorDetails(actor)">
                             <img :src="actor.image" class="card-img-top" :alt="actor.name">
                             <div class="card-body">
                                 <h5 class="card-title">{{ actor.name }}</h5>
                                 <p class="card-text">{{ actor.asCharacter }}</p>
-                                <!-- Nếu muốn thêm chức năng xem chi tiết diễn viên trong tương lai, có thể thêm nút ở đây -->
                             </div>
                         </div>
                     </div>
